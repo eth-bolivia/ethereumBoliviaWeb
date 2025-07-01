@@ -36,16 +36,16 @@ const stepsData = [
     icon: <FileText className="h-5 w-5" />,
     contentTitle: 'Completa tu Registro',
     contentDescription:
-      'Llena el formulario de inscripción con tus datos y sube el comprobante de pago para tu polera oficial.',
+      'Llena el formulario de inscripción con tus datos y sube el comprobante de pago para tu polera oficial. Si ya lo completaste, click en Siguiente.',
     contentElement: <StepForm/>
   },
   {
     id: 'step-2',
-    title: 'Telegram',
+    title: 'WhatsApp',
     icon: <Send className="h-5 w-5" />,
-    contentTitle: 'Únete a nuestro Canal de Telegram',
+    contentTitle: 'Únete a nuestro Grupo de WhatsApp',
     contentDescription:
-      'Es nuestro medio de comunicación principal para actualizaciones. ¡No te quedes fuera!',
+      'Es nuestro medio de comunicación principal para actualizaciones. Por favor preséntate con tu nombre y ciudad. ¡No te quedes fuera!',
     contentElement: <StepJoinGroup/>
   },
   {
@@ -54,7 +54,7 @@ const stepsData = [
     icon: <Users className="h-5 w-5" />,
     contentTitle: 'Busca o Forma tu Equipo',
     contentDescription:
-      'Usa el canal de Telegram para conectar con otros participantes y compartir tus habilidades.',
+      'Usa el Grupo de WhatsApp para conectar con otros participantes y compartir tus habilidades. Si buscas equipo comparte en el grupo que habilidades puedes aportar en el proyecto o si ya tiene una idea. Si ya formas parte del equipo, asegurate que todos los miembros llenen el formulario de registro y ingresen al grupo de WhatsApp.',
     contentElement: <StepTeam/>
   },
   {
@@ -72,16 +72,16 @@ const stepsData = [
     icon: <UserPlus className="h-5 w-5" />,
     contentTitle: 'Invita a tus Amigos',
     contentDescription:
-      'La experiencia es mejor acompañada. Comparte el enlace de registro con tus amigos.',
+      'La experiencia es mejor acompañada. Comparte la convocatoria de registro con tus amigos. Si ya lo completaste, click en Siguiente.',
     contentElement: <StepShare/>
   },
   {
     id: 'step-6',
     title: 'Prepárate',
     icon: <ClipboardCheck className="h-5 w-5" />,
-    contentTitle: 'Revisa la Información Final',
+    contentTitle: 'Tu Kit de Supervivencia para la Buildathon',
     contentDescription:
-      'Confirma la agenda, la ubicación y lo que necesitas llevar para estar 100% listo.',
+      '¡Prepárate para 48 horas de creatividad, código y camaradería! Para que tu única preocupación sea construir algo increíble, hemos preparado esta checklist con todo lo que necesitas para sobrevivir y prosperar.',
     contentElement: <StepReady/>
   },
 ];
