@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, useState, useEffect } from "react"
+import { useRef, useState, useEffect, useCallback } from "react"
 import { motion, useMotionValue, useSpring, animate } from "framer-motion"
 import { useTheme } from "next-themes"
 
@@ -21,90 +21,89 @@ export default function FramerSpotlight() {
   const springX = useSpring(mouseX, { damping: 20, stiffness: 300 })
   const springY = useSpring(mouseY, { damping: 20, stiffness: 300 })
 
-  // Define multiple spotlight colors
+
   const spotlightColors = [
-    { color: "rgba(36, 101, 237, 0.2)", darkColor: "rgba(36, 101, 237, 0.25)" }, // Blue (primary)
-    { color: "rgba(236, 72, 153, 0.15)", darkColor: "rgba(236, 72, 153, 0.2)" }, // Pink
-    { color: "rgba(16, 185, 129, 0.15)", darkColor: "rgba(16, 185, 129, 0.2)" }, // Green
+    { color: "rgba(36, 101, 237, 0.2)", darkColor: "rgba(36, 101, 237, 0.25)" },
+    { color: "rgba(236, 72, 153, 0.15)", darkColor: "rgba(236, 72, 153, 0.2)" },
+    { color: "rgba(16, 185, 129, 0.15)", darkColor: "rgba(16, 185, 129, 0.2)" },
   ]
 
-  // Update default position without causing re-renders
-  const updateDefaultPosition = () => {
+  // 2. Envuelve cada función en useCallback con sus dependencias
+  const updateDefaultPosition = useCallback(() => {
     if (heroRef.current) {
       const heroRect = heroRef.current.getBoundingClientRect()
       const centerX = heroRect.left + heroRect.width / 2
       const centerY = heroRect.top + heroRect.height / 3
 
       defaultPositionRef.current = { x: centerX, y: centerY }
-
-      // Set initial position
       mouseX.set(centerX)
       mouseY.set(centerY)
     }
-  }
+  }, [mouseX, mouseY]) // <-- Dependencias de esta función
 
-  // Handle mouse enter/leave for hero section
-  const handleMouseEnter = () => {
+  const handleMouseEnter = useCallback(() => {
     setIsMouseInHero(true)
-  }
+  }, []) // <-- No tiene dependencias, array vacío
 
-  const handleMouseLeave = () => {
+  const handleMouseLeave = useCallback(() => {
     setIsMouseInHero(false)
+    animate(mouseX, defaultPositionRef.current.x, { duration: 1.2, ease: "easeInOut" })
+    animate(mouseY, defaultPositionRef.current.y, { duration: 1.2, ease: "easeInOut" })
+  }, [mouseX, mouseY]) // <-- Dependencias de esta función
 
-    // Animate back to default position
-    animate(mouseX, defaultPositionRef.current.x, {
-      duration: 1.2,
-      ease: "easeInOut",
-    })
+  const handleMouseMove = useCallback((e: MouseEvent) => {
+    // No necesitamos 'isMouseInHero' aquí, ya que el listener se añade/quita
+    // dinámicamente. Pero para el ejemplo original, la dependencia era isMouseInHero.
+    // Lo simplificaremos un poco en el useEffect.
+    mouseX.set(e.clientX)
+    mouseY.set(e.clientY)
+  }, [mouseX, mouseY]) // <-- Dependencias de esta función
 
-    animate(mouseY, defaultPositionRef.current.y, {
-      duration: 1.2,
-      ease: "easeInOut",
-    })
-  }
-
-  // Handle mouse movement only when inside hero
-  const handleMouseMove = (e: MouseEvent) => {
-    if (isMouseInHero) {
-      mouseX.set(e.clientX)
-      mouseY.set(e.clientY)
-    }
-  }
-
-  // Setup effect - runs once on mount and cleans up on unmount
+  // Setup effect
   useEffect(() => {
     setIsMounted(true)
-
-    // Find the hero section element
     heroRef.current = document.getElementById("hero")
-
-    // Initial setup
     updateDefaultPosition()
 
-    // Event listeners
     window.addEventListener("resize", updateDefaultPosition)
-    window.addEventListener("mousemove", handleMouseMove)
 
-    if (heroRef.current) {
-      heroRef.current.addEventListener("mouseenter", handleMouseEnter)
-      heroRef.current.addEventListener("mouseleave", handleMouseLeave)
+    const heroElement = heroRef.current
+    if (heroElement) {
+      heroElement.addEventListener("mouseenter", handleMouseEnter)
+      heroElement.addEventListener("mouseleave", handleMouseLeave)
     }
 
     // Cleanup
     return () => {
       window.removeEventListener("resize", updateDefaultPosition)
-      window.removeEventListener("mousemove", handleMouseMove)
-
-      if (heroRef.current) {
-        heroRef.current.removeEventListener("mouseenter", handleMouseEnter)
-        heroRef.current.removeEventListener("mouseleave", handleMouseLeave)
+      if (heroElement) {
+        heroElement.removeEventListener("mouseenter", handleMouseEnter)
+        heroElement.removeEventListener("mouseleave", handleMouseLeave)
       }
     }
-  }, [isMouseInHero]) // Only depend on isMouseInHero
+  // 3. Usa las funciones memoizadas como dependencias.
+  // El useEffect ahora solo se ejecuta una vez al montar.
+  }, [updateDefaultPosition, handleMouseEnter, handleMouseLeave])
+
+  // Efecto separado para manejar el movimiento del ratón
+  // Esto es más limpio, ya que solo depende de `isMouseInHero`
+  useEffect(() => {
+    if (isMouseInHero) {
+      window.addEventListener("mousemove", handleMouseMove)
+    } else {
+      window.removeEventListener("mousemove", handleMouseMove)
+    }
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove)
+    }
+  }, [isMouseInHero, handleMouseMove])
+
 
   if (!isMounted) {
     return null
   }
+
 
   return (
     <div ref={containerRef} className="absolute inset-0 overflow-hidden pointer-events-none">
