@@ -1,15 +1,12 @@
 import {
   BuildathonRecap,
   EventHighlights,
-  EventSchedule,
-  SpeakersSchedule,
+  EventSchedule, 
   WhyParticipate,
-  SponsorsSection,
-  CommunityPartners,
+  SponsorsSection, 
   FaqSection,
   HeroSection,
-  FormsSection,
-  SpeakersSection,
+  FormsSection, 
   CallToActionBanner,
 } from "@/components/2025";
 
@@ -40,20 +37,22 @@ export default function Home() {
         </section>
 
          
-        {/* Speakers */}
+        {/* Speakers 
         <section className="py-20" id="speakers"  >
           <SpeakersSection />
         </section>
+        */}
 
         {/* Sponsors */}
         <section className="py-20" id="sponsors"  >
           <SponsorsSection />
         </section>
 
-        {/* Communities */}
+        {/* Communities 
         <section className="py-20" id="communities"  >
           <CommunityPartners />
         </section>
+      */}
 
       {/* Highlights */}
       <section className="py-20" id="highlights"  >
@@ -66,10 +65,10 @@ export default function Home() {
         <EventSchedule />
       </section>
 
-      {/* Speaker Schedule */}
+      {/* Speaker Schedule 
       <section className="py-20" id="speakers-schedule"  >
         <SpeakersSchedule /> 
-      </section>
+      </section>*/}
 
       
       {/* FAQ */}

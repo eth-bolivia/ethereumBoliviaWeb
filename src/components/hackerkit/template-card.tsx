@@ -15,7 +15,7 @@ interface CardProps {
 const TemplateCard = React.forwardRef<HTMLDivElement, CardProps>(({ name, xHandle, photo }, ref) => {
   
   return (
-    <div ref={ref} className="h-[360px] w-[360px] flex items-center justify-center bg-gray">
+    <div ref={ref} className="h-[360px] w-[360px] flex items-center justify-center bg-[#171717]">
       <div className="e-card playing">
         <div className="image"></div>
         <div className="wave"></div>

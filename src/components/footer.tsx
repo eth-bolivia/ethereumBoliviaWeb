@@ -12,6 +12,9 @@ export default function Footer() {
             <p className="text-sm text-muted-foreground">
               Comunidad de Ethereum en Bolivia desde 2020.
             </p>
+            <a href="https://github.com/fabiola29298" className="text-sm text-muted-foreground underline ">
+              Desarrollado por Fabi Async
+            </a>
           </div>
           <div className="space-y-4 w-1/4">
             <h3 className="text-sm font-bold">Redes Sociales</h3>

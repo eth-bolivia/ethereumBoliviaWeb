@@ -6,14 +6,14 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu, Zap } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
-
+// { label: "Events", href: "./events" },
+//{ label: "About", href: "./about" }
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   const navItems = [
     { label: "Buildathon 2025", href: "./buildathon2025" },
-    { label: "Events", href: "./events" },
-    { label: "About", href: "./about" },
+   
     { label: "Hacker Kit", href: "./hackerkit" },
   ]
 
