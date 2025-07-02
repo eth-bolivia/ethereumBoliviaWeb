@@ -59,9 +59,9 @@ const timelineEvents = [
     title: "Devconnect 2025",
     description: "",
     place: "Centro de Convenciones El Portal, Buenos Aires",
-    registrationLink: "https://ti.ke.to/buildathon-final",
+    registrationLink: "https://devconnect.org/",
     status: "upcoming",
-    imageUrl: "https://devconnect.org/",
+    imageUrl: "/devconnectposter.png",
   },
 ];
 

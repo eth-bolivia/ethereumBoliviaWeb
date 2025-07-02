@@ -12,6 +12,13 @@ import {
   DetailsSection,
   RegistrationSection
 } from "@/components/2025";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Convocatoria y Registro | Buildathon ETH Bolivia 2025', 
+  description: 'Revisa todos los detalles de la convocatoria, los tracks, el cronograma y regístrate para la Buildathon 2025. ¡Los cupos son limitados!',
+};
+
 
 export default function Home() {
   return (
