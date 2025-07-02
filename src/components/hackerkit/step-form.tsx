@@ -17,7 +17,7 @@ export function StepForm() { // Renombrado para ser un componente de página
               size="lg" 
               className="flex-shrink-0 w-full sm:w-auto bg-muted/100 "
             >
-              Inscríbete en la Buildathon 2025
+              Regístrate Ahora
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>

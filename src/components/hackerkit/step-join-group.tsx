@@ -19,20 +19,19 @@ export function StepJoinGroup() { // Renombrado para ser un componente de págin
  
 
   return (
-    <div className="container mx-auto py-12 px-4">
-      <div className="container mx-auto px-4 md:px-6"> 
- 
+    <div className="container mx-auto px-0 md:px-6">
+       
         <div className="max-w-4xl mx-auto">
-          <div className="space-y-4 pl-4">
+          <div className="space-y-4 sm:pl-0 md:pl-4">
             {checklistData.map((item, index) => (
-              <div key={index} className="flex items-start gap-3 lg:mx-10">
+              <div key={index} className="flex items-start gap-3 sm: mx-0 md:mx-10">
                 <CheckSquare className="h-5 w-5 text-green-500 mt-1 flex-shrink-0" /> 
                   <p className="text-base text-foreground text-start">{item.text}</p>
               </div>
             ))}
           </div>
             
-        </div>
+        
       </div>
     </div>
   );
