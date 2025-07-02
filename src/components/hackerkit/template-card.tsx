@@ -10,9 +10,36 @@ interface CardProps {
   name: string;
   xHandle: string;
   photo: string | null;
+  variant?: 'responsive' | 'download';
 }
- 
-const TemplateCard = React.forwardRef<HTMLDivElement, CardProps>(({ name, xHandle, photo }, ref) => {
+
+const styleVariants = {
+  // Estilos para la tarjeta visible y responsiva
+  responsive: {
+    buildathon: 'text-[10px] opacity-80',
+    hacker: 'text-sm',
+    pass: 'text-[10px] opacity-80',
+    photoContainer: ' w-20 h-20',
+    name: 'text-sm font-bold',
+    handle: 'text-[10px] opacity-80',
+    logoContainer: ' m-[-12px]',
+    logo: { width: 80, height: 70 },
+  },
+  // Estilos FIJOS y de ALTA CALIDAD para la descarga
+  download: {
+    buildathon: 'text-[10px] opacity-80',
+    hacker: 'text-sm',
+    pass: 'text-[10px] opacity-80',
+    photoContainer: ' w-20 h-20',
+    name: 'text-sm font-bold',
+    handle: 'text-[10px] opacity-80',
+    logoContainer: ' m-[-12px]',
+    logo: { width: 80, height: 70 },
+  }
+}; 
+
+const TemplateCard = React.forwardRef<HTMLDivElement, CardProps>(({ name, xHandle, photo, variant = 'responsive' }, ref) => {
+  const styles = styleVariants[variant];
   
   return (
     <div ref={ref} className="h-[360px] w-[360px] flex items-center justify-center bg-[#171717]">
@@ -22,23 +49,23 @@ const TemplateCard = React.forwardRef<HTMLDivElement, CardProps>(({ name, xHandl
         <div className="wave"></div>
         <div className="wave"></div>
         <div className="infotop ">
-          <p className="text-[10px] opacity-80">Buildathon 2025</p>
-          <p className="text-sm">HACKER</p>
-          <p className="text-[10px] opacity-80">Pase directo a hackear</p>
+          <p className={styles.buildathon}>Buildathon 2025</p>
+          <p className={styles.hacker}>HACKER</p>
+          <p className={styles.pass}>Pase directo a hackear</p>
           <div className="flex pt-3 justify-center ">
-            <div className="relative w-20 h-20 rounded-full bg-white/30 border-2 border-white/50 overflow-hidden">
+            <div className={`relative ${styles.photoContainer} rounded-full bg-white/30 border-2 border-white/50 overflow-hidden`}>
               {photo && (
                 <Image src={photo} alt="User photo" fill className="object-cover" />
               )}
             </div>
           </div>
           <div>
-            <h3 className="text-sm font-bold">{name}</h3>
-            <p className="text-[10px] opacity-80">{xHandle}</p>
+            <h3 className={styles.name}>{name}</h3>
+            <p className={styles.handle}>{xHandle}</p>
             
           </div>
-          <div className="flex justify-center m-[-12px]">
-            <Image width={80} height={70} src="/eth.png" alt="logo"  />
+          <div className={`flex justify-center ${styles.logoContainer}`}>
+            <Image width={styles.logo.width} height={styles.logo.height} src="/eth.png" alt="logo"  />
           </div>
           
         </div>

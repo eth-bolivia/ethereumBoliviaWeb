@@ -10,6 +10,7 @@ export function MakerCardPage() { // Renombrado para ser un componente de págin
   const [xHandle, setXHandle] = useState('@tu_usuario_x');
   const [photo, setPhoto] = useState<string | null>(null);
   const cardRef = useRef<HTMLDivElement>(null);
+  const downloadCardRef = useRef<HTMLDivElement>(null);
 
   const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
@@ -25,9 +26,9 @@ export function MakerCardPage() { // Renombrado para ser un componente de págin
   };
 
   const handleDownload = () => {
-    if (cardRef.current === null) return;
+    if (downloadCardRef.current === null) return;
     
-    toPng(cardRef.current, { 
+    toPng(downloadCardRef.current, { 
       cacheBust: true,
       pixelRatio: 2, // <-- CLAVE: Aumenta la resolución de la imagen descargada x2
     })
@@ -47,7 +48,7 @@ export function MakerCardPage() { // Renombrado para ser un componente de págin
       <div className="flex flex-col items-center justify-center gap-8 xl:flex-row xl:items-start">
         {/* Área de Vista Previa */}
         <div className="">
-          <TemplateCard ref={cardRef} name={name} xHandle={xHandle} photo={photo} />
+          <TemplateCard ref={cardRef} name={name} xHandle={xHandle} photo={photo} variant="responsive" />
         </div>
 
         {/* Panel de Controles */}
@@ -70,6 +71,20 @@ export function MakerCardPage() { // Renombrado para ser un componente de págin
           <Button onClick={handleDownload} className="w-full mt-8">
             Descargar PNG
           </Button>
+        </div>
+      </div>
+
+      {/* === COMPONENTE OCULTO PARA DESCARGA (TAMAÑO FIJO) === */}
+      {/* Este div está fuera de la pantalla y tiene el tamaño exacto que queremos para la imagen. */}
+      <div style={{ position: 'absolute', left: '-9999px', top: 0 }}>
+        <div style={{ width: '1080px', height: '1080px' }}>
+          <TemplateCard
+            ref={downloadCardRef}
+            name={name}
+            xHandle={xHandle}
+            photo={photo}
+            variant="download"
+          />
         </div>
       </div>
     </div>
