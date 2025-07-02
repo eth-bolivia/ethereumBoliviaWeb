@@ -21,7 +21,7 @@ const timelineEvents = [
     place: "Universidad Católica Boliviana (UCB), Bloque D, Auditorio 2",
     registrationLink: "https://app.unlock-protocol.com/event/introduccin-a-web-3-tecnologas-descentralizadas-para-el-futuro-de-la-ingeniera",
     status: "past",
-    imageUrl: "https://picsum.photos/seed/scz/400/300",
+    imageUrl: "/lapazposter.png",
   },
   {
     city: "Santa Cruz",
@@ -29,9 +29,9 @@ const timelineEvents = [
     title: "Celebración de los 10 años de Ethereum ",
     description: "Evento Satelite desde Ethereum Foundation",
     place: "Cowork 'El Nido'",
-    registrationLink: "https://ti.ke.to/scz-event",
+    registrationLink: "https://linktr.ee/ethbolivia",
     status: "upcoming",
-    imageUrl: "https://picsum.photos/seed/scz/400/300",
+    imageUrl: "/prontoposter.png",
   },
   {
     city: "Santa Cruz",
@@ -39,9 +39,9 @@ const timelineEvents = [
     title: "Buildathon Ehereum Bolivia 2025",
     description: "La Buildathon.",
     place: "Univalle",
-    registrationLink: "https://ti.ke.to/lpz-event",
+    registrationLink: "https://linktr.ee/ethbolivia",
     status: "upcoming",
-    imageUrl: "https://picsum.photos/seed/scz/400/300",
+    imageUrl: "/sczposter.png",
   },
   {
     city: "Brazil",
@@ -49,9 +49,9 @@ const timelineEvents = [
     title: "Ethereum Latam 2025",
     description: "",
     place: "Sao Paulo",
-    registrationLink: "https://ti.ke.to/cbba-event",
+    registrationLink: "https://www.ethlatam.org/es",
     status: "upcoming",
-    imageUrl: "https://picsum.photos/seed/scz/400/300",
+    imageUrl: "/ethlatamposter.png",
   },
   {
     city: "GRAN FINAL - Argentina",
@@ -61,7 +61,7 @@ const timelineEvents = [
     place: "Centro de Convenciones El Portal, Buenos Aires",
     registrationLink: "https://ti.ke.to/buildathon-final",
     status: "upcoming",
-    imageUrl: "https://picsum.photos/seed/scz/400/300",
+    imageUrl: "https://devconnect.org/",
   },
 ];
 
