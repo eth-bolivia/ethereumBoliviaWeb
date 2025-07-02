@@ -6,7 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import Footer from "@/components/footer" 
 import Navbar from "@/components/navbar"
 import StructuredData from "@/components/structured-data"
-
+import { Analytics } from "@vercel/analytics/next"
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -84,6 +84,7 @@ export default function RootLayout({
           <div className="flex min-h-screen flex-col">
             <Navbar />
             {children}
+              <Analytics />
             </div>
            <Footer />  
         </ThemeProvider>
