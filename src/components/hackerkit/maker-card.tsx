@@ -3,14 +3,15 @@
 import { useState, useRef } from 'react';
 import { toPng } from 'html-to-image';
 import TemplateCard from './template-card';
-import { Button } from '@/components/ui/button'; // Usamos el botón de Shadcn para consistencia
+import { Button } from '@/components/ui/button'; 
+import { Download, Twitter } from 'lucide-react';
 
-export function MakerCardPage() { // Renombrado para ser un componente de página
+export function MakerCardPage() { 
   const [name, setName] = useState('Tu Nombre');
   const [xHandle, setXHandle] = useState('@tu_usuario_x');
   const [photo, setPhoto] = useState<string | null>(null);
   const cardRef = useRef<HTMLDivElement>(null);
-  const downloadCardRef = useRef<HTMLDivElement>(null);
+  const downloadCardRef = useRef<HTMLDivElement>(null); 
 
   const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
@@ -42,6 +43,23 @@ export function MakerCardPage() { // Renombrado para ser un componente de págin
         console.error('¡Oops, algo salió mal!', err);
       });
   };
+ 
+  const handleShareOnTwitter = async () => {
+       
+      const text = `¡Listo para construir en la #BuildathonBolivia 2025! 🚀 Miren mi Hacker-Card. ¿Quién más se une al reto?`;
+      const hashtags = ['ETHBolivia', 'Web3', 'DestinoDevconnect'];
+      const via = 'EthereumBo'; 
+      const params = new URLSearchParams();
+      params.append('text', text);
+      params.append('hashtags', hashtags.join(','));
+      params.append('via', via);
+
+      const shareUrl = `https://twitter.com/intent/tweet?${params.toString()}`;
+
+      
+      window.open(shareUrl, '_blank', 'noopener,noreferrer');
+ 
+  };
 
   return (
     <div className="container mx-auto py-12">
@@ -69,7 +87,12 @@ export function MakerCardPage() { // Renombrado para ser un componente de págin
             </div>
           </div>
           <Button onClick={handleDownload} className="w-full mt-8">
+            <Download className="h-4 w-4 mr-2" />
             Descargar PNG
+          </Button>
+          <Button onClick={handleShareOnTwitter} 
+            variant="outline"  className="w-full mt-8"
+          > <Twitter className="h-4 w-4 mr-2" />Compartir en Twitter
           </Button>
         </div>
       </div>
