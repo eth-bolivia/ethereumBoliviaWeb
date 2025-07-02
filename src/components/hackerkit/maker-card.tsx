@@ -43,10 +43,10 @@ export function MakerCardPage() { // Renombrado para ser un componente de págin
   };
 
   return (
-    <div className="container mx-auto py-12 px-4">
+    <div className="container mx-auto py-12">
       <div className="flex flex-col items-center justify-center gap-8 xl:flex-row xl:items-start">
         {/* Área de Vista Previa */}
-        <div className="flex-shrink-0">
+        <div className="">
           <TemplateCard ref={cardRef} name={name} xHandle={xHandle} photo={photo} />
         </div>
 

@@ -3,8 +3,8 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, Rocket, Zap } from "lucide-react"
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
+import { Menu, Rocket } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
 // { label: "Events", href: "./events" },
 //{ label: "About", href: "./about" }
@@ -54,32 +54,23 @@ export default function Navbar() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
+              <SheetHeader>
+                <SheetTitle>Ethereum Bolivia</SheetTitle>
+                <SheetDescription>
+                  Página oficial
+                </SheetDescription>
+              </SheetHeader>
               <nav className="flex flex-col gap-4 mt-8" aria-label="Mobile Navigation">
                 {navItems.map((item, index) => (
                   <Link
                     key={index}
                     href={item.href}
-                    className="text-lg font-medium transition-colors hover:text-primary"
+                    className="ml-5 text-lg font-medium transition-colors hover:text-primary"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.label}
                   </Link>
-                ))}
-                <div className="flex items-center gap-4 mt-4">
-                  <ThemeToggle />
-                  <Button
-                    asChild
-                    className="w-full flex items-center gap-3 px-4 py-2 bg-[#1a1d21] hover:bg-[#2a2d31] text-white rounded-xl border-0 h-auto dark:bg-primary dark:hover:bg-primary/90 dark:shadow-[0_0_10px_rgba(36,101,237,0.4)]"
-                  >
-                    <Link href="#contact" onClick={() => setIsOpen(false)}>
-                      <Zap className="h-4 w-4 text-white" />
-                      <div className="flex flex-col items-start">
-                        <span className="text-sm font-medium">Request Demo</span>
-                        <span className="text-xs text-gray-400 dark:text-gray-300 -mt-0.5">v1.0.0</span>
-                      </div>
-                    </Link>
-                  </Button>
-                </div>
+                ))} 
               </nav>
             </SheetContent>
           </Sheet>

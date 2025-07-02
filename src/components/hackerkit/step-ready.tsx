@@ -36,7 +36,7 @@ export function StepReady() { // Renombrado para ser un componente de página
           {checklistData.map((item, index) => (
             <div key={index} className="flex items-start gap-3">
               <CheckSquare className="h-5 w-5 text-green-500 mt-1 flex-shrink-0" /> 
-                <p className="text-base text-foreground">{item.text}</p>
+                <p className="text-base text-foreground text-start">{item.text}</p>
             </div>
           ))}
         </div>

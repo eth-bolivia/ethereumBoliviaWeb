@@ -27,7 +27,7 @@ export function StepJoinGroup() { // Renombrado para ser un componente de págin
             {checklistData.map((item, index) => (
               <div key={index} className="flex items-start gap-3 lg:mx-10">
                 <CheckSquare className="h-5 w-5 text-green-500 mt-1 flex-shrink-0" /> 
-                  <p className="text-base text-foreground">{item.text}</p>
+                  <p className="text-base text-foreground text-start">{item.text}</p>
               </div>
             ))}
           </div>

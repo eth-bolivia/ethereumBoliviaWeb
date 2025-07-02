@@ -9,10 +9,10 @@ import React from "react";
 
 export function  RegistrationSection  () {
 return (
-  <section className=" ">
+  <section className="  ">
   <div className=" ">
-    <div className="mx-auto max-w-3xl text-center mb-12">
-      <Card className="bg-gradient-to-br from-primary/10 to-transparent ">
+    <div className="mx-auto max-w-3xl text-center mb-12 px-4 ">
+      <Card className="bg-gradient-to-br from-primary/10 to-transparent  ">
         <CardHeader>
           <CardTitle className="text-2xl">¿Listo para construir el futuro?</CardTitle>
         </CardHeader>

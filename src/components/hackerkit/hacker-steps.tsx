@@ -9,7 +9,7 @@ import {
   TabsList,
   TabsTrigger,
 } from '@/components/ui/tabs';
-import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import {
   FileText,
@@ -41,11 +41,11 @@ const stepsData = [
     icon: <Send className="h-5 w-5" />,
     contentTitle: 'Revisa tu bandera de entrada',
     contentDescription:
-      'Si ya no te llegó el mail de confirmación puedes escribirnos por WhatsApp al +591 69131888.',
+      'Si no te llegó el mail de confirmación puedes escribirnos por WhatsApp al +591 69131888.',
     contentElement: <StepJoinGroup/>
   },
   {
-    id: 'step-4',
+    id: 'step-3',
     title: 'Celebra',
     icon: <Sparkles className="h-5 w-5" />,
     contentTitle: 'Diseña tu Tarjeta de Aceptación',
@@ -54,7 +54,7 @@ const stepsData = [
     contentElement: <MakerCardPage/>
   },
   {
-    id: 'step-6',
+    id: 'step-4',
     title: 'Prepárate',
     icon: <ClipboardCheck className="h-5 w-5" />,
     contentTitle: 'Tu Kit de Supervivencia para la Buildathon',
@@ -126,8 +126,11 @@ export function HackerSteps() {
                   <CardTitle className="text-2xl">{step.contentTitle}</CardTitle>
                   <CardDescription className="text-base pt-2 leading-relaxed">
                     {step.contentDescription}
-                    {step.contentElement}
+                    
                   </CardDescription>
+                  <CardContent className="p-0">
+                    {step.contentElement}
+                  </CardContent>
                 </CardHeader>
               </Card>
             </TabsContent>

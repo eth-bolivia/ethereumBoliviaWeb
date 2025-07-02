@@ -15,7 +15,7 @@ export function FormsSection() {
       accentColor: "rgba(36, 101, 237, 0.5)",
       availableButton: true,
       urlButton: "https://tally.so/r/mOZy7p",
-      urlImage: "/sectionForms1.jpg"
+      urlImage: "/sectionForms2.jpg"
     },
     {
       icon: <SparklesIcon />,
@@ -24,7 +24,7 @@ export function FormsSection() {
       accentColor: "rgba(236, 72, 153, 0.5)",
       availableButton: false,
       urlButton: "",
-      urlImage: "/sectionForms2.jpg"
+      urlImage: "/sectionForms1.jpg"
     },
     {
       icon: <ZapIcon />,
