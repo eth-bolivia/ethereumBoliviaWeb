@@ -14,7 +14,7 @@ export function FormsSection() {
         "Pon a prueba tu talento creando ideas innovadoras, (como Hacker participas en la Buildathon y en las Conferencias), registro disponible hasta el 15 de Julio.",
       accentColor: "rgba(36, 101, 237, 0.5)",
       availableButton: true,
-      urlButton: "www.google.com",
+      urlButton: "https://tally.so/r/mOZy7p",
       urlImage: "/sectionForms1.jpg"
     },
     {
