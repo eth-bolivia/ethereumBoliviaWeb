@@ -9,27 +9,32 @@ const sponsorsData = [
   {
     name: "ETH LATAM",
     logoUrl: "/sponsor0.png", // Reemplaza con la ruta a tu logo
-    websiteUrl: "https://example.com",
+    websiteUrl: "https://www.ethlatam.org/es",
   },
   {
     name: "Devconnect",
     logoUrl: "/sponsor1.png",
-    websiteUrl: "https://example.com",
+    websiteUrl: "https://devconnect.org/",
   },
   {
     name: "Univalle",
     logoUrl: "/sponsor2.png",
-    websiteUrl: "https://example.com",
+    websiteUrl: "https://www.univalle.edu/",
   },
   {
     name: "Arbitrum",
     logoUrl: "/sponsor3.png",
-    websiteUrl: "https://example.com",
+    websiteUrl: "https://arbitrum.io/",
   },
   {
     name: "Avalanche",
-    logoUrl: "/sponsor4.png",
-    websiteUrl: "https://example.com",
+    logoUrl: "/avalanche.png",
+    websiteUrl: "https://www.avax.network/",
+  },
+  {
+    name: "ETH Kipu",
+    logoUrl: "/ethkipu.png",
+    websiteUrl: "https://www.ethkipu.org/es",
   },
 ];
 
