@@ -61,7 +61,7 @@ export function EventHighlights() {
             El Evento en Números
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Un vistazo al impacto y la escala de nuestra última edición.
+            Un vistazo al impacto y la escala de esta edición.
           </p>
         </div>
 

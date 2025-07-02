@@ -9,8 +9,7 @@ import {
 } from "@/components/ui/card";
 import { Lightbulb, Users, Star, Globe } from "lucide-react";
 
-// 1. Estructuramos los datos en un array. Esto hace que el código JSX sea limpio y fácil de mantener.
-const reasonsToParticipate = [
+ const reasonsToParticipate = [
   {
     icon: <Lightbulb className="h-6 w-6 text-primary" />,
     title: "Aprendes Construyendo",
@@ -50,8 +49,7 @@ export function WhyParticipate() {
           </p>
         </div>
 
-        {/* 2. Un grid responsivo que muestra 1 columna en móvil y 2 en pantallas más grandes */}
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-12">
+         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-12">
           {reasonsToParticipate.map((reason, index) => (
             <Card key={index} className="flex flex-col"> {/* flex-col para que las tarjetas tengan la misma altura */}
               <CardHeader className="flex flex-row items-center gap-4 pb-4">

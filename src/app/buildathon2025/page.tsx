@@ -8,6 +8,9 @@ import {
   HeroSection,
   FormsSection, 
   CallToActionBanner,
+  RoadToBuildathon,
+  DetailsSection,
+  RegistrationSection
 } from "@/components/2025";
 
 export default function Home() {
@@ -20,23 +23,30 @@ export default function Home() {
         
 
         {/* Forms Section */}
-        <div id="convocatorias">
+        <div className="py-5" id="convocatorias">
           <FormsSection  />
         </div>
 
         {/* Recap Video   */}
-        <section className="py-20" id="recap-video"  >
+        <section className="py-10" id="recap-video"  >
           <BuildathonRecap />
           <CallToActionBanner />
         </section>
-
         {/* why be part of buildathon   */}
-        <section className="py-20" id="why-buildathon"  >
+        <section className="py-1" id="details-buildathon"  >
+           <DetailsSection/>
+        </section>
+        {/* why be part of buildathon   */}
+        <section className="py-1" id="why-buildathon-section"  >
           <WhyParticipate />
-          <CallToActionBanner />
+         
         </section>
 
          
+        <section className="py-1 sm:px-15 lg:px-20" id="registration-section"  >
+          <RegistrationSection />
+        </section>
+        
         {/* Speakers 
         <section className="py-20" id="speakers"  >
           <SpeakersSection />
@@ -57,11 +67,10 @@ export default function Home() {
       {/* Highlights */}
       <section className="py-20" id="highlights"  >
         <EventHighlights />
-         
       </section>
 
       {/* Event Schedule */}
-      <section className="py-20" id="events-schedule"  >
+      <section className="py-5" id="events-schedule"  >
         <EventSchedule />
       </section>
 
@@ -72,10 +81,12 @@ export default function Home() {
 
       
       {/* FAQ */}
-      <section className="py-20" id="faq"  >
+      <section className="py-5" id="faq"  >
         <FaqSection />
         <CallToActionBanner />
       </section>
+
+      <RoadToBuildathon/>
      
     </>
   )

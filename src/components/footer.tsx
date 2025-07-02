@@ -6,8 +6,8 @@ export default function Footer() {
   return (
     <footer className="border-t py-12 md:py-16">
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="space-y-4">
+        <div className="flex flex-col px-10 md:flex-row md:justify-between gap-4 md:px-0">
+          <div className="space-y-4 ">
             <h3 className="text-lg font-bold">Ethereum Bolivia</h3>
             <p className="text-sm text-muted-foreground">
               Comunidad de Ethereum en Bolivia desde 2020.
@@ -16,7 +16,8 @@ export default function Footer() {
               Desarrollado por Fabi Async
             </a>
           </div>
-          <div className="space-y-4 w-1/4">
+
+          <div className="space-y-4 ">
             <h3 className="text-sm font-bold">Redes Sociales</h3>
             <nav aria-label="Social Networks Navigation">
               <ul className="space-y-2 text-sm">
