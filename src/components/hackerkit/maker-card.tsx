@@ -13,9 +13,31 @@ export function MakerCardPage() {
   const cardRef = useRef<HTMLDivElement>(null);
   const downloadCardRef = useRef<HTMLDivElement>(null); 
 
+  //upload error
+  const [uploadError, setUploadError] = useState<string | null>(null);
+  // is downloading?
+  const [isDownloading, setIsDownloading] = useState(false);
+
   const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
+  setUploadError(null);
+
+  if (e.target.files && e.target.files[0]) {
       const file = e.target.files[0];
+
+      // Validación de tipo de archivo
+      const allowedTypes = ['image/jpeg', 'image/png', 'image/webp'];
+      if (!allowedTypes.includes(file.type)) {
+        setUploadError('Formato de archivo no válido. Por favor, sube un JPG, PNG o WebP.');
+        return;
+      }
+
+      // Validación de tamaño 
+      const maxSizeInBytes = 5 * 1024 * 1024; // 5MB
+      if (file.size > maxSizeInBytes) {
+        setUploadError('La imagen es muy pesada. El tamaño máximo es de 5 MB.');
+        return;
+      }
+
       const reader = new FileReader();
       reader.onloadend = () => {
         setPhoto(reader.result as string);
@@ -24,26 +46,32 @@ export function MakerCardPage() {
     } else {
       setPhoto(null);
     }
+    
   };
 
-  const handleDownload = () => {
-    if (downloadCardRef.current === null) return;
-    
-    toPng(downloadCardRef.current, { 
-      cacheBust: true,
-      pixelRatio: 2, // <-- CLAVE: Aumenta la resolución de la imagen descargada x2
-    })
-      .then((dataUrl) => {
-        const link = document.createElement('a');
-        link.download = `buildathon-card-${name.replace(/\s+/g, '-').toLowerCase()}.png`;
-        link.href = dataUrl;
-        link.click();
+  const handleDownload = async () => {
+    if (downloadCardRef.current === null || isDownloading) return;
+
+    setIsDownloading(true); // Iniciar carga
+
+    try {
+      const dataUrl = await toPng(downloadCardRef.current, { 
+        cacheBust: true,
+        pixelRatio: 2, // <-- CLAVE: Aumenta la resolución de la imagen descargada x2
       })
-      .catch((err) => {
-        console.error('¡Oops, algo salió mal!', err);
-      });
+      const link = document.createElement('a');
+      link.download = `hacker-card-${name}.png`;
+      link.href = dataUrl;
+      link.click();
+    } catch (err) {
+      console.error(err);
+      alert('Hubo un error al generar la imagen. Por favor, intenta con otro navegador o desactiva bloqueadores de anuncios.');
+    } finally {
+      setIsDownloading(false); // Finalizar carga
+    }
   };
- 
+  
+
   const handleShareOnTwitter = async () => {
        
       const text = `¡Listo para construir en la #BuildathonBolivia 2025! 🚀 Miren mi Hacker-Card. ¿Quién más se une al reto?`;
@@ -84,11 +112,12 @@ export function MakerCardPage() {
             <div className="grid w-full items-center gap-1.5">
               <label htmlFor="photo" className="text-sm font-medium">Tu Foto</label>
               <input type="file" accept="image/png, image/jpeg" id="photo" onChange={handlePhotoUpload} className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium" />
+              {uploadError && <p className="text-sm text-red-500 mt-1">{uploadError}</p>}
             </div>
           </div>
-          <Button onClick={handleDownload} className="w-full mt-8">
+          <Button onClick={handleDownload} className="w-full mt-8" disabled={isDownloading}>
             <Download className="h-4 w-4 mr-2" />
-            Descargar PNG
+            {isDownloading ? 'Generando...' : 'Descargar PNG'}
           </Button>
           <Button onClick={handleShareOnTwitter} 
             variant="outline"  className="w-full mt-8"
@@ -112,4 +141,5 @@ export function MakerCardPage() {
       </div>
     </div>
   );
+
 }
