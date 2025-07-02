@@ -13,10 +13,8 @@ import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/ca
 import { Button } from '@/components/ui/button';
 import {
   FileText,
-  Send,
-  Users,
-  Sparkles,
-  UserPlus,
+  Send, 
+  Sparkles, 
   ClipboardCheck,
   CheckCircle2, 
   ArrowLeft,
@@ -24,10 +22,8 @@ import {
 } from 'lucide-react';
 import { MakerCardPage } from './maker-card';
 import { StepForm } from './step-form';
-import { StepReady } from './step-ready';
-import { StepShare } from './step-share';
-import { StepJoinGroup } from './step-join-group';
-import { StepTeam } from './step-team';
+import { StepReady } from './step-ready'; 
+import { StepJoinGroup } from './step-join-group'; 
 
 const stepsData = [
   {
@@ -41,21 +37,12 @@ const stepsData = [
   },
   {
     id: 'step-2',
-    title: 'WhatsApp',
+    title: 'Mail',
     icon: <Send className="h-5 w-5" />,
-    contentTitle: 'Únete a nuestro Grupo de WhatsApp',
+    contentTitle: 'Revisa tu bandera de entrada',
     contentDescription:
-      'Es nuestro medio de comunicación principal para actualizaciones. Por favor preséntate con tu nombre y ciudad. ¡No te quedes fuera!',
+      'Si ya no te llegó el mail de confirmación puedes escribirnos por WhatsApp al +591 69131888.',
     contentElement: <StepJoinGroup/>
-  },
-  {
-    id: 'step-3',
-    title: 'Equipo',
-    icon: <Users className="h-5 w-5" />,
-    contentTitle: 'Busca o Forma tu Equipo',
-    contentDescription:
-      'Usa el Grupo de WhatsApp para conectar con otros participantes y compartir tus habilidades. Si buscas equipo comparte en el grupo que habilidades puedes aportar en el proyecto o si ya tiene una idea. Si ya formas parte del equipo, asegurate que todos los miembros llenen el formulario de registro y ingresen al grupo de WhatsApp.',
-    contentElement: <StepTeam/>
   },
   {
     id: 'step-4',
@@ -65,15 +52,6 @@ const stepsData = [
     contentDescription:
       'Comparte tu emoción en redes sociales con tu tarjeta personalizada. ¡Etiquétanos!',
     contentElement: <MakerCardPage/>
-  },
-  {
-    id: 'step-5',
-    title: 'Invita',
-    icon: <UserPlus className="h-5 w-5" />,
-    contentTitle: 'Invita a tus Amigos',
-    contentDescription:
-      'La experiencia es mejor acompañada. Comparte la convocatoria de registro con tus amigos. Si ya lo completaste, click en Siguiente.',
-    contentElement: <StepShare/>
   },
   {
     id: 'step-6',
@@ -122,9 +100,9 @@ export function HackerSteps() {
             const newIndex = stepsData.findIndex((step) => step.id === value);
             setActiveStep(newIndex);
           }}
-          className="max-w-4xl mx-auto"
+          className="max-w-5xl mx-auto"
         >
-          <TabsList className="grid w-full grid-cols-3 md:grid-cols-6">
+          <TabsList className="grid w-full grid-cols-4 md:grid-cols-4 ">
             {stepsData.map((step, index) => (
               <TabsTrigger key={step.id} value={step.id}>
                 <div className="flex items-center gap-2">
