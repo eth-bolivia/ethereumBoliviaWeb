@@ -4,7 +4,7 @@ import type { ReactNode } from "react"
 import Link from "next/link";
 import Image from "next/image";
 
-import { Zap } from "lucide-react";
+import { Rocket } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 
@@ -62,14 +62,23 @@ export default function FormsFeatureCard({
           {availableButton && urlButton && (
             <div className="m-3 "> 
               <Link href={urlButton}>
-                <Button className="w-full px-5 py-6 h-[60px] rounded-xl border-2 border-gray-300 dark:border-gray-600 bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 text-[15px] font-medium text-foreground">
-                  <Zap className="h-5 w-5 mr-2" />  
-                  Ingresar
+                <Button className="w-full px-5 py-6 h-[60px] rounded-xl border-2 border-gray-300 dark:border-gray-600 bg-transparent dark:bg-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 text-[15px] font-medium text-foreground">
+                  Regístrate Ahora <Rocket className="h-5 w-5 ml-2" />
                 </Button>
               </Link>
             </div>
-          )}
-
+          )
+          }
+          {!availableButton && !urlButton && (
+            <div className="m-3 "> 
+              
+                <Button  className="w-full px-5 py-6 h-[60px] cursor-not-allowed rounded-xl border-2 border-gray-300 dark:border-muted/100 bg-transparent dark:bg-muted/40 hover:bg-gray-100 dark:hover:bg-gray-800 text-[15px] font-medium text-foreground">
+                  Muy pronto 
+                </Button>
+               
+            </div>
+          )
+          } 
    
 
         </div>

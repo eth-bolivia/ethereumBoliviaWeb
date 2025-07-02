@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { 
   Rocket,  
 } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 
 export function  RegistrationSection  () {
@@ -22,11 +23,13 @@ return (
           <p className="font-semibold">
             ¡Los cupos son limitados! No te quedes fuera de la Buildathon más grande del país.
           </p>
-          <Button size="lg" className="w-full sm:w-auto">
-            ¡Quiero Registrarme! <Rocket className="h-5 w-5 ml-2" />
-          </Button>
+          <Link href="#convocatorias">
+            <Button size="lg" className="w-full sm:w-auto">
+              ¡Quiero Registrarme! <Rocket className="h-5 w-5 ml-2" />
+            </Button>
+          </Link>
           <p className="text-xs text-muted-foreground mt-4">
-            Sigue a @EthereumBolivia en redes para actualizaciones, workshops previos y anuncios especiales.
+            Sigue a @EthereumBo en redes para actualizaciones, workshops previos y anuncios especiales.
           </p>
         </CardContent>
       </Card>

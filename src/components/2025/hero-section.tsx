@@ -25,7 +25,7 @@ export function HeroSection() {
 
               <div className="flex flex-wrap justify-center gap-3 mt-6">
  
-                <Link href="#convocatorias"   className="flex px-5 py-6 h-[70px] rounded-xl border-2 border-gray-300 dark:border-gray-600 bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 text-[15px] font-medium text-foreground">
+                <Link href="#convocatorias"   className="flex px-5 py-6 h-[70px] rounded-xl border-2 border-gray-300 dark:border-gray-600 bg-transparent dark:bg-muted/100 hover:bg-gray-100 dark:hover:bg-gray-800 text-[15px] font-medium text-foreground">
                    Regístrate Ahora <Rocket className="h-5 w-5 ml-2" />
                 </Link>
               </div>
