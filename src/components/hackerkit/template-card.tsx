@@ -42,7 +42,7 @@ const TemplateCard = React.forwardRef<HTMLDivElement, CardProps>(({ name, xHandl
   const styles = styleVariants[variant];
   
   return (
-    <div ref={ref} className="h-[360px] w-[360px] flex items-center justify-center bg-[#171717]">
+    <div ref={ref} className="h-[300px] w-[300px] flex items-center justify-center bg-[#171717]">
       <div className="e-card playing">
         <div className="image"></div>
         <div className="wave"></div>

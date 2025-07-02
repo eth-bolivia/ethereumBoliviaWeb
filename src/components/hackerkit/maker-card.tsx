@@ -91,7 +91,7 @@ export function MakerCardPage() {
 
   return (
     <div className="container mx-auto py-12">
-      <div className="flex flex-col items-center justify-center gap-8 xl:flex-row xl:items-start">
+      <div className="flex flex-col items-center justify-center gap-8 xl:flex-row xl:items-start" >
         {/* Área de Vista Previa */}
         <div className="">
           <TemplateCard ref={cardRef} name={name} xHandle={xHandle} photo={photo} variant="responsive" />
@@ -100,6 +100,7 @@ export function MakerCardPage() {
         {/* Panel de Controles */}
         <div className="w-full max-w-md rounded-xl border bg-card p-6 text-card-foreground shadow-sm">
           <h4 className="text-xl font-bold mb-6">Personaliza tu Tarjeta</h4>
+          <p></p>
           <div className="space-y-4">
             <div className="grid w-full items-center gap-1.5">
               <label htmlFor="name" className="text-sm font-medium">Nombre</label>
@@ -123,6 +124,10 @@ export function MakerCardPage() {
             variant="outline"  className="w-full mt-8"
           > <Twitter className="h-4 w-4 mr-2" />Compartir en Twitter
           </Button>
+
+           <p className="text-xs text-muted-foreground text-center mt-3 px-4">
+            💡 Consejo: La descarga funciona mejor en computadoras. Si tienes problemas en tu móvil, inténtalo desde una laptop o PC.
+          </p>
         </div>
       </div>
 
