@@ -32,7 +32,7 @@ const highlightsData = [
   },
   {
     icon: <Trophy className="h-10 w-10 text-primary" />,
-    value: "+1000$",
+    value: "+1,000$",
     label: "en Premios",
   },
   {

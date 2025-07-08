@@ -20,7 +20,7 @@ export function FormsSection() {
     {
       icon: <SparklesIcon />,
       title: "Registro SOLO para conferencias",
-      description: "El registro para participar en solo las Conferencias se abriran el 10 de Julio.",
+      description: "El registro para participar en solo las Conferencias se abriran el 17 de Julio.",
       accentColor: "rgba(236, 72, 153, 0.5)",
       availableButton: false,
       urlButton: "",
