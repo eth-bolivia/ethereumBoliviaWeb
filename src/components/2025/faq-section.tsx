@@ -50,7 +50,7 @@ const faqData = [
     id: "item-7",
     question: "¿Cómo y hasta cuándo puedo registrarme?",
     answer:
-      'El registro es en línea a través del formulario en la sección "Convocatoria para Hackers" de esta página. Las inscripciones están abiertas del 1 al 23 de julio de 2025. Te recomendamos registrarte lo antes posible, ¡los cupos son limitados y se llenan rápido!',
+      'El registro es en línea a través del formulario en la sección "Convocatoria para Hackers" de esta página. ¡los cupos son limitados y se llenan rápido!',
   },
   {
     id: "item-8",

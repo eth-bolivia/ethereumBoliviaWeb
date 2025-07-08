@@ -63,7 +63,7 @@ export default function FormsFeatureCard({
             <div className="m-3 "> 
               <Link href={urlButton}>
                 <Button className="w-full px-5 py-6 h-[60px] rounded-xl border-2 border-gray-300 dark:border-gray-600 bg-transparent dark:bg-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 text-[15px] font-medium text-foreground">
-                  Regístrate Ahora <Rocket className="h-5 w-5 ml-2" />
+                  Ingresar <Rocket className="h-5 w-5 ml-2" />
                 </Button>
               </Link>
             </div>

@@ -11,7 +11,7 @@ export function FormsSection() {
       icon: <BotIcon />,
       title: "Convocatoria para Hackers",
       description:
-        "Pon a prueba tu talento creando ideas innovadoras, (como Hacker participas en la Buildathon y en las Conferencias), registro disponible hasta el 15 de Julio.",
+        "Pon a prueba tu talento creando ideas innovadoras, (como Hacker participas en la Buildathon y en las Conferencias).",
       accentColor: "rgba(36, 101, 237, 0.5)",
       availableButton: true,
       urlButton: "https://tally.so/r/mOZy7p",
@@ -28,11 +28,11 @@ export function FormsSection() {
     },
     {
       icon: <ZapIcon />,
-      title: "Compra Merch exclusiva",
-      description: "Visita nuestra tienda de Merch. Disponible desde el 10 de Julio de 2025",
+      title: "Compra Merch exclusiva del evento",
+      description: "Visita nuestra tienda de Merch.",
       accentColor: "rgba(34, 211, 238, 0.5)",
-      availableButton: false,
-      urlButton: "",
+      availableButton: true,
+      urlButton: "/shop",
       urlImage: "/sectionForms3.jpg"
     } 
   ]
