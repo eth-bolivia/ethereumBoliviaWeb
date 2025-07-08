@@ -9,6 +9,12 @@ images: {
         port: '',
         pathname: '/**', 
       },
+      {
+        protocol: 'https',
+        hostname: 'aclyw5rm3tvukr5i.public.blob.vercel-storage.com',
+        port: '',
+        pathname: '/**', 
+      },
     ],
   },
 };

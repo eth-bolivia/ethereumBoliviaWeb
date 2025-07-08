@@ -15,6 +15,7 @@ export default function Navbar() {
     { label: "Buildathon 2025", href: "./buildathon2025" },
    
     { label: "Hacker Kit", href: "./hackerkit" },
+    { label: "La Tiendita", href: "./shop" },
   ]
 
   return (
