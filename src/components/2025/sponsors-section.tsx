@@ -4,7 +4,6 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-// 1. Datos de los sponsors. Usaremos placeholders. Reemplázalos con tus logos reales.
 const sponsorsData = [
   {
     name: "ETH LATAM",
@@ -18,7 +17,7 @@ const sponsorsData = [
   },
   {
     name: "Univalle",
-    logoUrl: "/sponsor2.png",
+    logoUrl: "/univalle.png",
     websiteUrl: "https://www.univalle.edu/",
   },
   {
@@ -36,6 +35,11 @@ const sponsorsData = [
     logoUrl: "/ethkipu.png",
     websiteUrl: "https://www.ethkipu.org/es",
   },
+  {
+    name: "Taikai",
+    logoUrl: "/taikai.svg",
+    websiteUrl: "https://taikai.network/",
+  },
 ];
 
 export function SponsorsSection() {
@@ -51,7 +55,6 @@ export function SponsorsSection() {
           </p>
         </div>
 
-        {/* 2. Grid responsivo para los sponsors. Menos columnas = logos más grandes. */}
         <div className="grid grid-cols-2 gap-8 md:grid-cols-3 md:gap-12">
           {sponsorsData.map((sponsor) => (
             <Link

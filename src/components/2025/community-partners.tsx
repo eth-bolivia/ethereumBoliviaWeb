@@ -3,39 +3,39 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-
-// 1. Datos de las comunidades aliadas.
+ 
 const communitiesData = [
+
   {
-    name: "BoliviaJS",
-    logoUrl: "/logos/community-boliviajs.svg", // Reemplaza con la ruta a tu logo
-    websiteUrl: "https://example.com",
+    name: "AsoBlockchain",
+    logoUrl: "/communities/aso-logo.jpg",
+    websiteUrl: "#",
   },
   {
-    name: "La Paz DEV",
-    logoUrl: "/logos/community-lapazdev.svg",
-    websiteUrl: "https://example.com",
+    name: "Builders",
+    logoUrl: "/communities/build-logo.jpg",
+    websiteUrl: "#",
+  }, 
+  {
+    name: "GDG Santa Cruz",
+    logoUrl: "/communities/GDG-blanco.png",  
+    websiteUrl: "#",
   },
   {
-    name: "Cochabamba AI",
-    logoUrl: "/logos/community-cbbaai.svg",
-    websiteUrl: "https://example.com",
+    name: "Mujeres Tics",
+    logoUrl: "/communities/mujeres-blanco.png",
+    websiteUrl: "#",
   },
   {
-    name: "Santa Cruz Web",
-    logoUrl: "/logos/community-sczweb.svg",
-    websiteUrl: "https://example.com",
+    name: "Populi",
+    logoUrl: "/communities/pop-blanco.png",
+    websiteUrl: "#",
   },
   {
     name: "Women Techmakers",
-    logoUrl: "/logos/community-wtm.svg",
-    websiteUrl: "https://example.com",
-  },
-  {
-    name: "GDG La Paz",
-    logoUrl: "/logos/community-gdg.svg",
-    websiteUrl: "https://example.com",
-  },
+    logoUrl: "/communities/wtm-blanco.png",
+    websiteUrl: "#",
+  }, 
 ];
 
 export function CommunityPartners() {
@@ -51,7 +51,6 @@ export function CommunityPartners() {
           </p>
         </div>
 
-        {/* 2. Grid más denso para las comunidades = logos más pequeños. */}
         <div className="grid grid-cols-3 gap-6 md:grid-cols-6 md:gap-8">
           {communitiesData.map((community) => (
             <Link
@@ -66,7 +65,7 @@ export function CommunityPartners() {
                 alt={`Logo de ${community.name}`}
                 width={150}
                 height={60}
-                className="w-auto h-10 object-contain grayscale transition-all duration-300 hover:grayscale-0"
+                className="w-auto h-15 object-contain grayscale transition-all duration-300 hover:grayscale-0"
               />
             </Link>
           ))}
