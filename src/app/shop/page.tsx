@@ -15,7 +15,7 @@ export default function ShopPage() {
   const handleAddToCart = (newItem: CartItem) => {
     setCart(prevCart => {
       const existingItemIndex = prevCart.findIndex(
-        item => item.id === newItem.id && item.size === newItem.size
+        item => item.id === newItem.id && item.extra === newItem.extra
       );
 
       if (existingItemIndex > -1) {
