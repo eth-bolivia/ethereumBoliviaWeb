@@ -36,9 +36,9 @@ const sponsorsData = [
     websiteUrl: "https://www.ethkipu.org/es",
   },
   {
-    name: "Taikai",
-    logoUrl: "/taikai.svg",
-    websiteUrl: "https://taikai.network/",
+    name: "BuidlGuidl",
+    logoUrl: "/logo-buidl.svg",
+    websiteUrl: "https://buidlguidl.com/",
   },
 ];
 

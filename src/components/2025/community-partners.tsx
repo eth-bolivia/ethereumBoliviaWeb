@@ -7,6 +7,11 @@ import Image from 'next/image';
 const communitiesData = [
 
   {
+    name: "Taikai",
+    logoUrl: "/taikai-white.svg",
+    websiteUrl: "https://taikai.network/",
+  },
+  {
     name: "AsoBlockchain",
     logoUrl: "/communities/aso-logo.jpg",
     websiteUrl: "#",
@@ -36,6 +41,7 @@ const communitiesData = [
     logoUrl: "/communities/wtm-blanco.png",
     websiteUrl: "#",
   }, 
+
 ];
 
 export function CommunityPartners() {
@@ -44,7 +50,7 @@ export function CommunityPartners() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Comunidades Aliadas
+            Partners & Comunidades Aliadas
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Colaborando juntos para fortalecer el ecosistema tecnológico local y regional.
@@ -58,7 +64,7 @@ export function CommunityPartners() {
               href={community.websiteUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex justify-center items-center p-4 bg-background rounded-lg border transition-transform duration-300 hover:scale-110"
+              className="flex justify-center items-center p-4 bg-black dark:bg-background rounded-lg border transition-transform duration-300 hover:scale-110"
             >
               <Image
                 src={community.logoUrl}
