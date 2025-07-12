@@ -10,7 +10,7 @@ export function generateWhatsAppMessage(cart: CartItem[], total: number): string
     message += `*•  ${item.name} ( ${item.selectedFeature})* - $${itemTotal}\n`;
   });
 
-  message += `\n*Total a pagar: $${total.toFixed(2)}*`;
+  message += `\n*Total a pagar: ${total.toFixed(2)} Bs.*`;
   
   return encodeURIComponent(message);
 }
