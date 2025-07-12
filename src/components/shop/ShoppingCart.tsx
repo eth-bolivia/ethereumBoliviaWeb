@@ -40,9 +40,12 @@ export function ShoppingCart({ cart, onRemoveFromCart, whatsappNumber }: Shoppin
                 <div key={index} className="flex justify-between items-center">
                   <div>
                     <p className="font-semibold">{item.name}</p>
-                    <p className="text-sm text-muted-foreground">
-                     {item.size} - {item.currentPrice.toFixed(2)} Bs
+                    <p className="text-sm text-muted-foreground capitalize">
+                      {/* Mostramos el extra seleccionado solo si existe */}
+                      {item.selectedFeature && `${item.selectedFeature} - `} 
+                      {item.currentPrice.toFixed(2)} Bs
                     </p>
+ 
                   </div>
                   <div className="flex items-center gap-2">
                     <p className="font-semibold">{(item.currentPrice).toFixed(2)} Bs</p>

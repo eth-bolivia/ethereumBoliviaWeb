@@ -4,11 +4,12 @@ export interface MerchItemData {
   id: string;
   name: string;
   description: string;
-  imageUrl: string;
+  imageUrl: Array<string>;
+  extra: Array<string>;
   price: number
 }
 
 export interface CartItem extends MerchItemData {
-  size: string;
+  selectedFeature?: string;
   currentPrice: number;
 }

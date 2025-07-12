@@ -7,7 +7,7 @@ export function generateWhatsAppMessage(cart: CartItem[], total: number): string
   
   cart.forEach(item => {
     const itemTotal = (item.currentPrice).toFixed(2);
-    message += `*•  ${item.name} (Talla: ${item.size})* - $${itemTotal}\n`;
+    message += `*•  ${item.name} ( ${item.selectedFeature})* - $${itemTotal}\n`;
   });
 
   message += `\n*Total a pagar: $${total.toFixed(2)}*`;
