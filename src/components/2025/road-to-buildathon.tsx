@@ -96,7 +96,7 @@ export function RoadToBuildathon() {
 
 
 const TimelineItem = ({ event }: { event: (typeof timelineEvents)[0] }) => {
-  const isFinalEvent = event.title === "La Buildathon";
+  const isFinalEvent = event.title === "Devconnect 2025";
 
   return (
     <div className="relative">

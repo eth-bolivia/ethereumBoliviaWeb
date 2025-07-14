@@ -1,35 +1,58 @@
-import type { Metadata } from "next"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { ArrowLeft } from "lucide-react" 
+// app/page.tsx
+import { createClient } from '@/lib/supabase/server';
+import EventCard from '@/components/events/event-card';
 
-export const metadata: Metadata = {
-  title: "Privacy Policy | Enterprise AI Platform",
-  description: "Our commitment to protecting your privacy and securing your data.",
-}
+import { EventType } from '@/lib/supabase/typeEvents';
 
-export default function HackerKitPage() { 
+export default async function EventsPage() {
+  const supabase = createClient();
+  
+  
+  const { data: events, error } = await (await supabase)
+    .from("events")
+    .select('*')
+    .order('date', { ascending: false });  
 
-  return ( 
+  if (error) {
+    console.error('Error fetching events:', error);
+    return (
+      <main className="flex min-h-screen flex-col items-center justify-center p-24">
+        <p className="text-red-500">Error al cargar los eventos. Intenta de nuevo más tarde.</p>
+      </main>
+    );
+  }
 
-      < >
-        <section className="py-12 md:py-16">
-          <div className="container max-w-4xl">
-            <div className="mb-8">
-              <Button variant="ghost" size="sm" asChild className="mb-6">
-                <Link href="/" className="flex items-center gap-2">
-                  <ArrowLeft className="h-4 w-4" />
-                  Back to Home
-                </Link>
-              </Button>
-              <h1 className="text-4xl font-bold tracking-tight mb-4">Privacy Policy</h1>
-            </div>
+  if (!events || events.length === 0) {
+    return (
+      <main className="flex min-h-screen flex-col items-center justify-center p-24">
+        <p className="text-gray-500">No hay eventos programados por el momento.</p>
+      </main>
+    );
+  }
 
-            <h2> kit</h2>
+  return (
+    <section className="w-full py-16 md:py-24 bg-background">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="mx-auto max-w-3xl text-center mb-16">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+            Nuestros Eventos
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Nuestra ruta de 21 eventos previos para llegar a la Buildathon 2025.
+          </p>
+        </div>
+
+        <div className="relative max-w-3xl mx-auto">
+       
+            <div className="space-y-2 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {events.map((event: EventType) => (
+              <EventCard key={event.id} event={event} />
+            ))}
           </div>
-        </section>
-      </>
-
-        
-  )
+ 
+        </div>
+      </div>
+    </section>
+   
+  );
 }
