@@ -16,6 +16,7 @@ export default function Navbar() {
    
     { label: "Hacker Kit", href: "./hackerkit" },
     { label: "La Tiendita", href: "./shop" },
+    { label: "Eventos", href: "./events" },
   ]
 
   return (
