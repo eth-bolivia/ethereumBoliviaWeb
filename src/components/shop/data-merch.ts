@@ -26,7 +26,7 @@ export const merchData: MerchItemData[] = [
       'https://aclyw5rm3tvukr5i.public.blob.vercel-storage.com/merch/merch-hoddie1b.png',
     ],
     extra: ['s', 'm', 'l', 'xl'],
-    price: 247,
+    price: 260,
   },
 
   {
@@ -37,7 +37,7 @@ export const merchData: MerchItemData[] = [
       'https://aclyw5rm3tvukr5i.public.blob.vercel-storage.com/merch/merch-hoddie2b.png',
     ],
     extra: ['s', 'm', 'l', 'xl'],
-    price: 247,
+    price: 260,
   },
 
   {
@@ -48,7 +48,7 @@ export const merchData: MerchItemData[] = [
       'https://aclyw5rm3tvukr5i.public.blob.vercel-storage.com/merch/merch-hoddie3b.png',
     ],
     extra: ['s', 'm', 'l', 'xl'],
-    price: 247,
+    price: 260,
   },
   {
     id: 'merch-06',
