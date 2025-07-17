@@ -11,7 +11,7 @@ export function FormsSection() {
       icon: <BotIcon />,
       title: "Convocatoria para Hackers",
       description:
-        "Pon a prueba tu talento creando ideas innovadoras, (como Hacker participas en la Buildathon y en las Conferencias).",
+        "Cupos Llenos. Más de 200 hackers! ",
       accentColor: "rgba(36, 101, 237, 0.5)",
       availableButton: true,
       urlButton: "https://tally.so/r/mOZy7p",
@@ -20,7 +20,7 @@ export function FormsSection() {
     {
       icon: <SparklesIcon />,
       title: "Registro SOLO para conferencias",
-      description: "El registro para participar en solo las Conferencias se abriran el 17 de Julio.",
+      description: "Muy pronto.",
       accentColor: "rgba(236, 72, 153, 0.5)",
       availableButton: false,
       urlButton: "",

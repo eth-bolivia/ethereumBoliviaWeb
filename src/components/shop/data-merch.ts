@@ -8,7 +8,7 @@ export const merchData: MerchItemData[] = [
       'https://aclyw5rm3tvukr5i.public.blob.vercel-storage.com/merch/merch-taza2.png'
     ],
     extra: [],
-    price: 1,
+    price: 20,
   },
   {
     id: 'merch-02',
@@ -16,7 +16,7 @@ export const merchData: MerchItemData[] = [
     description: 'Tomatodo',
     imageUrl: ['https://aclyw5rm3tvukr5i.public.blob.vercel-storage.com/merch/merch-tomatodo.png',],
     extra: [],
-    price: 1,
+    price: 38,
   },
   {
     id: 'merch-03',
@@ -26,7 +26,7 @@ export const merchData: MerchItemData[] = [
       'https://aclyw5rm3tvukr5i.public.blob.vercel-storage.com/merch/merch-hoddie1b.png',
     ],
     extra: ['s', 'm', 'l', 'xl'],
-    price: 1,
+    price: 247,
   },
 
   {
@@ -37,7 +37,7 @@ export const merchData: MerchItemData[] = [
       'https://aclyw5rm3tvukr5i.public.blob.vercel-storage.com/merch/merch-hoddie2b.png',
     ],
     extra: ['s', 'm', 'l', 'xl'],
-    price: 1,
+    price: 247,
   },
 
   {
@@ -48,7 +48,7 @@ export const merchData: MerchItemData[] = [
       'https://aclyw5rm3tvukr5i.public.blob.vercel-storage.com/merch/merch-hoddie3b.png',
     ],
     extra: ['s', 'm', 'l', 'xl'],
-    price: 1,
+    price: 247,
   },
   {
     id: 'merch-06',
@@ -56,17 +56,9 @@ export const merchData: MerchItemData[] = [
     description: 'Eco bolsa',
     imageUrl: ['https://aclyw5rm3tvukr5i.public.blob.vercel-storage.com/merch/merch-bolsa.png',],
     extra: [],
-    price: 1,
+    price: 25,
   },
-
-  {
-    id: 'merch-07',
-    name: 'Mouse Pad',
-    description: 'Mouse Pad',
-    imageUrl: ['https://aclyw5rm3tvukr5i.public.blob.vercel-storage.com/merch/merch-mouse.png',],
-    extra: [],
-    price: 1,
-  },
+ 
 
   {
     id: 'merch-08',
@@ -76,7 +68,7 @@ export const merchData: MerchItemData[] = [
       'https://aclyw5rm3tvukr5i.public.blob.vercel-storage.com/merch/merch-llavero2.png',
     ],
     extra: ['negro', 'azul'],
-    price: 1,
+    price: 4,
   },
   {
     id: 'merch-09',
@@ -86,7 +78,7 @@ export const merchData: MerchItemData[] = [
       'https://aclyw5rm3tvukr5i.public.blob.vercel-storage.com/merch/merch-pin2.png',
     ],
     extra: ['negro', 'azul'],
-    price: 1,
+    price: 4,
   },
   
   

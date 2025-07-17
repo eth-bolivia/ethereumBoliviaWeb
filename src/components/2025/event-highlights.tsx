@@ -22,7 +22,7 @@ const highlightsData = [
   },
   {
     icon: <Code className="h-10 w-10 text-primary" />,
-    value: "250",
+    value: "200",
     label: "Hackers",
   },
   {
