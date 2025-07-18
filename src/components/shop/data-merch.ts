@@ -16,7 +16,7 @@ export const merchData: MerchItemData[] = [
     description: 'Tomatodo',
     imageUrl: ['https://aclyw5rm3tvukr5i.public.blob.vercel-storage.com/merch/merch-tomatodo.png',],
     extra: [],
-    price: 38,
+    price: 40,
   },
   {
     id: 'merch-03',
@@ -68,18 +68,30 @@ export const merchData: MerchItemData[] = [
       'https://aclyw5rm3tvukr5i.public.blob.vercel-storage.com/merch/merch-llavero2.png',
     ],
     extra: ['negro', 'azul'],
-    price: 4,
+    price: 10,
+  },
+
+  {
+    id: 'merch-08',
+    name: 'Pin',
+    description: 'Pin',
+    imageUrl: ['https://aclyw5rm3tvukr5i.public.blob.vercel-storage.com/merch/merch-pin2.png',
+      'https://aclyw5rm3tvukr5i.public.blob.vercel-storage.com/merch/merch-pin1.png',
+    ],
+    extra: ['negro', 'azul'],
+    price: 10,
   },
   {
     id: 'merch-09',
-    name: 'Pin',
-    description: 'Pin',
-    imageUrl: ['https://aclyw5rm3tvukr5i.public.blob.vercel-storage.com/merch/merch-pin1.png',
-      'https://aclyw5rm3tvukr5i.public.blob.vercel-storage.com/merch/merch-pin2.png',
+    name: 'Polera oficial de la Buildathon 2025',
+    description: 'Polera exclusiva',
+    imageUrl: ['https://aclyw5rm3tvukr5i.public.blob.vercel-storage.com/merch/merch-polera1.jpeg',
+      'https://aclyw5rm3tvukr5i.public.blob.vercel-storage.com/merch/merch-polera2.jpeg',
     ],
-    extra: ['negro', 'azul'],
-    price: 4,
+    extra: ['s', 'm', 'l', 'xl'],
+    price: 150,
   },
+
   
   
 ];
