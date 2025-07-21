@@ -38,6 +38,9 @@ export default function ShopPage() {
         <p className="mt-4 text-lg text-muted-foreground">
           Lleva un recuerdo de la Buildathon y apoya a la comunidad.
         </p>
+        <p className="mt-4 text-lg text-muted-foreground">
+          Recuerda que la entrega es en la Buildathon.
+        </p>
       </div>
       
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">

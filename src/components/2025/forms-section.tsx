@@ -20,9 +20,9 @@ export function FormsSection() {
     {
       icon: <SparklesIcon />,
       title: "Registro SOLO para conferencias",
-      description: "Muy pronto.",
+      description: "Disponible hasta agota stock.",
       accentColor: "rgba(236, 72, 153, 0.5)",
-      availableButton: false,
+      availableButton: true,
       urlButton: "https://tally.so/r/wgPVWN",
       urlImage: "/sectionForms1.jpg"
     },
