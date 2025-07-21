@@ -23,7 +23,7 @@ export function FormsSection() {
       description: "Muy pronto.",
       accentColor: "rgba(236, 72, 153, 0.5)",
       availableButton: false,
-      urlButton: "",
+      urlButton: "https://tally.so/r/wgPVWN",
       urlImage: "/sectionForms1.jpg"
     },
     {
