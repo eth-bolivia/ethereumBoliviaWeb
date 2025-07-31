@@ -10,7 +10,7 @@ import {
   CallToActionBanner,
   RoadToBuildathon,
   DetailsSection,
-  
+  RegistrationSection,
   CommunityPartners
 } from "@/components/2025";
 import type { Metadata } from 'next';
@@ -29,7 +29,11 @@ export default function Home() {
           <HeroSection/>
         </section>
         
-
+        {/* Register Section */}
+        <section className="py-1 sm:px-15 lg:px-20" id="registration-section"  >
+          <RegistrationSection />
+        </section>
+        
         {/* Forms Section */}
         <div className="py-5" id="convocatorias">
           <FormsSection  />
@@ -50,11 +54,7 @@ export default function Home() {
          
         </section>
 
-        {/* Register Section 
-        <section className="py-1 sm:px-15 lg:px-20" id="registration-section"  >
-          <RegistrationSection />
-        </section>
-        */}
+
         
         {/* Speakers 
         <section className="py-20" id="speakers"  >
